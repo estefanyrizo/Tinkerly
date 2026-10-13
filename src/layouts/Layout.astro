@@ -6,14 +6,50 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { tinkerlyConfig } from '../config/tinkerly.config';
 interface Props { title?: string; description?: string; ogImage?: string; }
-const {title = `${tinkerlyConfig.name} | ${tinkerlyConfig.tagline}`, description = tinkerlyConfig.description, ogImage = '/brand/tinkerly-og.png'} = Astro.props;
+const {title = `${tinkerlyConfig.name} | Papelería creativa personalizada en Nicaragua`, description = tinkerlyConfig.description, ogImage = '/brand/tinkerly-og.png'} = Astro.props;
 const siteUrl = import.meta.env.PUBLIC_SITE_URL || Astro.site?.href || Astro.url.origin;
 const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
 const ogImageUrl = new URL(ogImage, siteUrl).href;
+const homeUrl = new URL('/', siteUrl).href;
 const structuredData = {
-  '@context': 'https://schema.org', '@type': 'Organization', name: tinkerlyConfig.name,
-  description, url: new URL('/', siteUrl).href,
-  logo: new URL('/brand/tinkerly-logo.png', siteUrl).href,
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': `${homeUrl}#organization`,
+      name: tinkerlyConfig.name,
+      description,
+      url: homeUrl,
+      logo: new URL('/brand/tinkerly-logo.png', siteUrl).href,
+      image: ogImageUrl,
+      telephone: '+50583621351',
+      areaServed: { '@type': 'Country', name: 'Nicaragua' },
+      contactPoint: [{
+        '@type': 'ContactPoint',
+        telephone: '+50583621351',
+        contactType: 'customer service',
+        availableLanguage: ['Spanish'],
+      }],
+      ...(tinkerlyConfig.instagramUrl ? { sameAs: [tinkerlyConfig.instagramUrl] } : {}),
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${homeUrl}#website`,
+      name: tinkerlyConfig.name,
+      url: homeUrl,
+      inLanguage: 'es-NI',
+      publisher: { '@id': `${homeUrl}#organization` },
+    },
+    {
+      '@type': 'FAQPage',
+      '@id': `${homeUrl}#faq`,
+      mainEntity: tinkerlyConfig.faqs.map(item => ({
+        '@type': 'Question',
+        name: item.question,
+        acceptedAnswer: { '@type': 'Answer', text: item.answer },
+      })),
+    },
+  ],
 };
 ---
 <!doctype html>
@@ -36,6 +72,8 @@ const structuredData = {
       })();
     </script>
     <meta name="description" content={description} />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <meta property="og:site_name" content={tinkerlyConfig.name} />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <link rel="canonical" href={canonicalUrl} />

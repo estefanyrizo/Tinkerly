@@ -1,8 +1,8 @@
 /** Contenido principal de Tinkerly. Completa los canales antes de publicar. */
 export const tinkerlyConfig = {
   name: 'Tinkerly',
-  tagline: 'Papelería creativa por encargo',
-  description: 'Papelería creativa personalizada: stickers, tarjetas, etiquetas y detalles elaborados por encargo. Descubre ideas para personalizar.',
+  tagline: 'Papelería creativa personalizada en Nicaragua',
+  description: 'Papelería creativa personalizada en Nicaragua: stickers, tarjetas, etiquetas y detalles por encargo. Descubre ideas y consulta tu pedido con Tinkerly.',
   navigation: [
     { label: 'Inicio', href: '/#inicio' },
     { label: 'Ideas', href: '/#ideas' },
@@ -10,7 +10,7 @@ export const tinkerlyConfig = {
     { label: 'Sobre Tinkerly', href: '/#sobre-tinkerly' },
     { label: 'Preguntas', href: '/#preguntas' },
   ],
-  whatsappNumber: '', // Ejemplo: 50588888888. Sin + ni espacios.
+  whatsappNumber: '50583621351', // Nicaragua; número público para consultas por WhatsApp.
   whatsappMessage: '¡Hola, Tinkerly! Me gustaría consultar un pedido personalizado.',
   instagramUrl: '', // https://instagram.com/... (si aplica)
   /** Referencias visuales; NO es un catálogo con productos confirmados ni stock. */
