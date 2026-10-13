@@ -16,7 +16,12 @@ const wa = getWhatsAppUrl();
       <ThemeToggle />
       <a class="tk-button tk-button--primary tk-header__cta" href={wa ?? '/#contacto'} {...(wa ? {target: '_blank', rel: 'noopener noreferrer'} : {})}>Consultar pedido <span aria-hidden="true">↗</span></a>
       <button class="tk-header__menu-button" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="tk-mobile-menu" data-tk-menu-button>
-        <span></span><span></span><span></span>
+        <svg class="tk-header__menu-open" width="27" height="27" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+          <path d="M4 7h16M4 12h16M4 17h16" />
+        </svg>
+        <svg class="tk-header__menu-close" width="27" height="27" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+          <path d="M5.5 5.5l13 13M18.5 5.5l-13 13" />
+        </svg>
       </button>
     </div>
   </div>

@@ -96,3 +96,11 @@
   .tk-theme-toggle {transition:none;}
   .tk-theme-toggle:hover {transform:none;}
 }
+
+/* Layered photo and mobile navigation use the same dark design language. */
+:root[data-theme='dark'] .tk-hero__showcase::before {background:#453341;}
+:root[data-theme='dark'] .tk-hero__note {background:#352734;color:#F2CBDA;box-shadow:0 12px 32px rgba(0,0,0,.25);}
+:root[data-theme='dark'] .tk-hero__note-spark,
+:root[data-theme='dark'] .tk-hero__decoration {color:#E3ACBF;}
+:root[data-theme='dark'] .tk-header__menu-button {color:#F2CEDD;background:transparent;}
+:root[data-theme='dark'] .tk-header__menu-button:hover {color:#FFFFFF;background:transparent;}

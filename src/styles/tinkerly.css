@@ -209,3 +209,48 @@ img {display:block; max-width:100%;}
 }
 @media(max-width:390px){.tk-process__grid{grid-template-columns:1fr;}.tk-process__step{max-width:260px;margin:auto;}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;}*,*::before,*::after{animation:none!important;transition-duration:0.01ms!important;scroll-behavior:auto!important;}.tk-motion-ready [data-reveal]{opacity:1!important;transform:none!important;}}
+
+/* Editorial hero: full photograph with a gentle layered paper backdrop. */
+.tk-hero {padding-block:clamp(3.5rem,6.2vw,6.2rem);}
+.tk-hero__inner {grid-template-columns:minmax(0,1fr) minmax(0,1.12fr);gap:clamp(2.7rem,5vw,5.8rem);}
+.tk-hero__showcase {padding:0 0 1.6rem 1.2rem;isolation:isolate;}
+.tk-hero__showcase::before {
+  width:auto;height:auto;inset:-1rem -1rem 3rem 2.7rem;
+  border-radius:30px;background:#F9E9EE;transform:rotate(2.1deg);z-index:-1;
+}
+.tk-hero__photo {aspect-ratio:auto;max-height:none;border-radius:25px;box-shadow:0 18px 48px rgba(114,75,90,.14);}
+.tk-hero__photo img {height:auto;aspect-ratio:14/11;object-fit:contain;object-position:center;}
+.tk-hero__showcase:hover .tk-hero__photo img {transform:scale(1.018);}
+.tk-hero__note {
+  position:absolute;bottom:0;left:0;z-index:2;
+  display:flex;align-items:center;gap:.65rem;
+  padding:.95rem 1.2rem;border-radius:13px;
+  background:#FFFFFF;color:#7A2343;box-shadow:0 11px 32px rgba(105,10,45,.12);
+  font-size:.73rem;font-weight:500;letter-spacing:-.01em;
+}
+.tk-hero__note strong {font-weight:600;}
+.tk-hero__note-spark {color:#AC6D84;font-size:1.45rem;line-height:1;}
+.tk-hero__decoration {position:absolute;right:-1.1rem;top:-2rem;z-index:2;width:40px;height:40px;color:#AC6D84;animation:tk-sparkle 7s ease-in-out infinite;}
+@media(max-width:880px){
+  .tk-hero__inner {grid-template-columns:1fr;}
+  .tk-hero__showcase {width:min(100%,620px);padding:0 0 1.5rem 1rem;}
+  .tk-hero__photo {aspect-ratio:auto;max-height:none;}
+}
+@media(max-width:620px){
+  .tk-hero__showcase {padding:0 0 1.5rem .45rem;}
+  .tk-hero__showcase::before {inset:-.4rem -.3rem 2.7rem 1.3rem;border-radius:18px;}
+  .tk-hero__photo {aspect-ratio:auto;border-radius:17px;}
+  .tk-hero__photo img {aspect-ratio:14/11;}
+  .tk-hero__note {left:0;bottom:.15rem;padding:.7rem .85rem;font-size:.67rem;border-radius:11px;}
+  .tk-hero__note-spark {font-size:1.2rem;}
+  .tk-hero__decoration {right:-.25rem;top:-1.2rem;width:28px;height:28px;}
+}
+/* Menu and theme toggle use matching, frameless SVG icons. */
+.tk-header__menu-button {padding:0;color:var(--tk-berry);background:transparent;flex:none;align-items:center;justify-content:center;}
+.tk-header__menu-button:hover {color:var(--tk-burgundy);background:transparent;}
+.tk-header__menu-button svg {display:block;}
+.tk-header__menu-close {display:none!important;}
+.tk-header__menu-button[aria-expanded='true'] .tk-header__menu-open {display:none;}
+.tk-header__menu-button[aria-expanded='true'] .tk-header__menu-close {display:block!important;}
+.tk-header__actions {gap:.65rem;}
+@media(max-width:620px){.tk-header__actions{gap:.15rem;}}
