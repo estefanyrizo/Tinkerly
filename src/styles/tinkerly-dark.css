@@ -109,9 +109,6 @@
 :root[data-theme='dark'] .tk-header__menu-button {color:#F2CEDD;background:transparent;}
 :root[data-theme='dark'] .tk-header__menu-button:hover {color:#FFFFFF;background:transparent;}
 
-  .tk-theme-toggle:hover > svg,.tk-theme-toggle:active > svg,
-  .tk-theme-toggle:hover .tk-theme-toggle__stars {transform:none;filter:none;}
-}
 
 :root[data-theme='dark'] .tk-bloom-sparkle {color:#E0AEC3;}
 :root[data-theme='dark'] .tk-contact__sparkle {color:#F0BFD2;opacity:.46;}
