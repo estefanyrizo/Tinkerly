@@ -110,6 +110,5 @@
 :root[data-theme='dark'] .tk-header__menu-button:hover {color:#FFFFFF;background:transparent;}
 
 
-:root[data-theme='dark'] .tk-bloom-sparkle__bg {fill:#6F3A54;}
-:root[data-theme='dark'] .tk-bloom-sparkle__star {fill:#F7D6E3;}
+:root[data-theme='dark'] .tk-bloom-sparkle {color:#EECFDA;}
 :root[data-theme='dark'] .tk-contact__sparkle {color:#F0BFD2;opacity:.46;}
