@@ -12,7 +12,7 @@ export const tinkerlyConfig = {
   ],
   whatsappNumber: '50583621351', // Nicaragua; número público para consultas por WhatsApp.
   whatsappMessage: '¡Hola, Tinkerly! Me gustaría consultar un pedido personalizado.',
-  instagramUrl: '', // https://instagram.com/... (si aplica)
+  instagramUrl: 'https://www.instagram.com/tinkerly.ni',
   /** Referencias visuales; NO es un catálogo con productos confirmados ni stock. */
   ideas: [
     { id: 'stickers', title: 'Stickers y etiquetas', caption: 'Para organizar, decorar y personalizar.', image: '/images/stickers.webp', alt: 'Imagen conceptual de hojas de stickers y etiquetas en tonos rosados.' },

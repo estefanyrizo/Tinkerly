@@ -24,7 +24,17 @@ import ArrowIcon from './ArrowIcon.astro';
       <h2>Tu próximo detalle</h2>
       <p>Consulta nuestras opciones de personalización y conoce cómo hacer tu pedido.</p>
       {wa ? <a href={wa} target="_blank" rel="noopener noreferrer" class="tk-footer__link">Escríbenos por WhatsApp <ArrowIcon /></a> : <a href="/#contacto" class="tk-footer__link">Consulta cómo pedir <ArrowIcon /></a>}
-      {tinkerlyConfig.instagramUrl && <a class="tk-footer__link" href={tinkerlyConfig.instagramUrl} rel="noopener noreferrer" target="_blank">Instagram <ArrowIcon /></a>}
+      {tinkerlyConfig.instagramUrl && (
+        <a class="tk-footer__link tk-footer__instagram" href={tinkerlyConfig.instagramUrl} rel="noopener noreferrer" target="_blank" aria-label="Instagram de Tinkerly, @tinkerly.ni">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <rect x="2.5" y="2.5" width="19" height="19" rx="5.5" />
+            <circle cx="12" cy="12" r="4.2" />
+            <circle cx="17.6" cy="6.4" r="1" fill="currentColor" stroke="none" />
+          </svg>
+          <span>@tinkerly.ni</span>
+          <ArrowIcon />
+        </a>
+      )}
     </div>
   </div>
   <div class="tk-container tk-footer__bottom"><small>© {year} Tinkerly · Papelería creativa</small></div>
