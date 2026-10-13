@@ -2,6 +2,7 @@
 import { tinkerlyConfig, getWhatsAppUrl } from '../config/tinkerly.config';
 import ThemeToggle from './ThemeToggle.astro';
 const wa = getWhatsAppUrl();
+import ArrowIcon from './ArrowIcon.astro';
 ---
 <header class="tk-header" data-tk-header>
   <div class="tk-container tk-header__inner">
@@ -14,7 +15,7 @@ const wa = getWhatsAppUrl();
     </nav>
     <div class="tk-header__actions">
       <ThemeToggle />
-      <a class="tk-button tk-button--primary tk-header__cta" href={wa ?? '/#como-pedir'} {...(wa ? {target: '_blank', rel: 'noopener noreferrer'} : {})}>{wa ? 'Consultar pedido' : 'Cómo pedir'} <span aria-hidden="true">↗</span></a>
+      <a class="tk-button tk-button--primary tk-header__cta" href={wa ?? '/#como-pedir'} {...(wa ? {target: '_blank', rel: 'noopener noreferrer'} : {})}>{wa ? 'Consultar pedido' : 'Cómo pedir'} <ArrowIcon /></a>
       <button class="tk-header__menu-button" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="tk-mobile-menu" data-tk-menu-button>
         <svg class="tk-header__menu-open" width="27" height="27" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
           <path d="M4 7h16M4 12h16M4 17h16" />
@@ -28,7 +29,7 @@ const wa = getWhatsAppUrl();
   <nav id="tk-mobile-menu" class="tk-header__mobile" aria-label="Menú móvil" hidden data-tk-mobile-menu>
     <div class="tk-container tk-header__mobile-links">
       {tinkerlyConfig.navigation.map(item => <a href={item.href}>{item.label}</a>)}
-      <a class="tk-button tk-button--primary" href={wa ?? '/#como-pedir'} {...(wa ? {target:'_blank', rel:'noopener noreferrer'} : {})}>{wa ? 'Consultar pedido' : 'Cómo pedir'} ↗</a>
+      <a class="tk-button tk-button--primary" href={wa ?? '/#como-pedir'} {...(wa ? {target:'_blank', rel:'noopener noreferrer'} : {})}>{wa ? 'Consultar pedido' : 'Cómo pedir'} <ArrowIcon /></a>
     </div>
   </nav>
 </header>

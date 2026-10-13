@@ -2,6 +2,7 @@
 import { getWhatsAppUrl } from '../config/tinkerly.config';
 const wa = getWhatsAppUrl();
 const contact = wa ?? '#como-pedir';
+import ArrowIcon from './ArrowIcon.astro';
 ---
   <section id="inicio" class="tk-hero">
     <div class="tk-container tk-hero__inner">
@@ -10,8 +11,8 @@ const contact = wa ?? '#como-pedir';
         <h1 class="tk-hero__title">Pequeños detalles,<br/><em>grandes emociones.</em></h1>
         <p class="tk-hero__desc">Stickers, tarjetas y otros detalles de papelería que puedes personalizar para regalar, celebrar o usar cada día.</p>
         <div class="tk-hero__buttons">
-          <a class="tk-button tk-button--primary" href={contact} {...(wa ? { target:'_blank', rel:'noopener noreferrer' } : {})}>{wa ? 'Cuéntanos tu idea' : 'Cómo pedir'} <span aria-hidden="true">↗</span></a>
-          <a class="tk-button tk-button--ghost" href="#ideas">Ver ideas <span aria-hidden="true">→</span></a>
+          <a class="tk-button tk-button--primary" href={contact} {...(wa ? { target:'_blank', rel:'noopener noreferrer' } : {})}>{wa ? 'Cuéntanos tu idea' : 'Cómo pedir'} <ArrowIcon /></a>
+          <a class="tk-button tk-button--ghost" href="#ideas">Ver ideas <ArrowIcon direction="right" /></a>
         </div>
         <div class="tk-hero__mini">Personaliza colores y textos <i></i> Elaboración por encargo</div>
       </div>

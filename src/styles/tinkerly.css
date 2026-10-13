@@ -113,7 +113,7 @@ img {display:block; max-width:100%;}
 .tk-process__head>p:last-child {font-size:.88rem;line-height:1.8;color:var(--tk-muted);}
 .tk-process__grid {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.7rem;margin-top:3.8rem;}
 .tk-process__step {position:relative;text-align:center;padding:0 .2rem;}
-.tk-process__step:not(:last-child)::after {content:'→';position:absolute;color:#D6B2C0;right:-1.3rem;top:2.5rem;font-size:1.3rem;}
+.tk-process__step:not(:last-child)::after {content:'';position:absolute;right:-1.1rem;top:2.7rem;width:.55rem;height:.55rem;border-top:1.5px solid #D6B2C0;border-right:1.5px solid #D6B2C0;transform:rotate(45deg);}
 .tk-process__number {position:absolute;top:0;left:calc(50% + 34px);font-size:.65rem;font-weight:600;color:#C58FA4;}
 .tk-process__symbol {display:grid;place-items:center;margin:0 auto 1.2rem;width:79px;height:79px;border-radius:50%;background:#FFF0F4;color:#9B546E;font-size:2rem;transition:transform .4s ease,background .4s ease;}
 .tk-process__step:hover .tk-process__symbol {transform:translateY(-6px) rotate(-5deg);background:#FBE2EB;}
@@ -129,8 +129,8 @@ img {display:block; max-width:100%;}
 .tk-about__content h2 {margin:.9rem 0 1.4rem;}
 .tk-about__content>p:not(.tk-kicker) {color:#806A74;font-size:.86rem;line-height:1.9;margin-bottom:1rem;}
 .tk-inline-link {display:inline-flex;gap:1rem;align-items:center;margin-top:.5rem;font-size:.84rem;color:var(--tk-berry);font-weight:600;}
-.tk-inline-link span {transition:transform .3s;}
-.tk-inline-link:hover span {transform:translate(3px,-2px);}
+.tk-inline-link .tk-arrow-icon {transition:transform .3s;}
+.tk-inline-link:hover .tk-arrow-icon {transform:translate(3px,-2px);}
 
 /* FAQ */
 .tk-faq__grid {display:grid;grid-template-columns:.83fr 1.17fr;gap:clamp(2rem,6vw,6rem);}
@@ -307,3 +307,8 @@ img {display:block; max-width:100%;}
 @media(max-width:620px) {
   .tk-bloom-sparkle {width:21px;height:21px;flex-basis:21px;}
 }
+
+/* Cross-platform SVG arrows: no text glyph or emoji font fallback on iOS. */
+.tk-arrow-icon {display:inline-block;flex-shrink:0;width:1.15em;height:1.15em;vertical-align:-.16em;stroke:currentColor;}
+.tk-footer__link .tk-arrow-icon {margin-left:.3em;}
+.tk-idea__arrow .tk-arrow-icon {width:1rem;height:1rem;}

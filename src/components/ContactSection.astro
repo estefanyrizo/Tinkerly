@@ -1,6 +1,7 @@
 ---
 import { getWhatsAppUrl } from '../config/tinkerly.config';
 const wa = getWhatsAppUrl();
+import ArrowIcon from './ArrowIcon.astro';
 ---
   <section id="contacto" class="tk-section tk-contact">
     <div class="tk-container tk-contact__banner" data-reveal>
@@ -13,6 +14,6 @@ const wa = getWhatsAppUrl();
       <p class="tk-kicker">PEDIDOS PERSONALIZADOS</p>
       <h2>¿Qué te gustaría <em>personalizar?</em></h2>
       <p>Cuéntanos qué producto buscas, cuántas unidades necesitas y si tienes alguna referencia.</p>
-      {wa ? <a class="tk-button tk-button--primary" href={wa} target="_blank" rel="noopener noreferrer">Escríbenos por WhatsApp <span aria-hidden="true">↗</span></a> : <a class="tk-button tk-button--primary" href="#ideas">Explorar ideas <span aria-hidden="true">→</span></a>}
+      {wa ? <a class="tk-button tk-button--primary" href={wa} target="_blank" rel="noopener noreferrer">Escríbenos por WhatsApp <ArrowIcon /></a> : <a class="tk-button tk-button--primary" href="#ideas">Explorar ideas <ArrowIcon direction="right" /></a>}
     </div>
   </section>
