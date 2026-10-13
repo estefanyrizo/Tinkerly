@@ -6,7 +6,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { tinkerlyConfig } from '../config/tinkerly.config';
 interface Props { title?: string; description?: string; ogImage?: string; }
-const {title = `${tinkerlyConfig.name} | Papelería creativa personalizada en Nicaragua`, description = tinkerlyConfig.description, ogImage = '/brand/tinkerly-og.png'} = Astro.props;
+const {title = `${tinkerlyConfig.name} | Papelería creativa personalizada en Managua, Nicaragua`, description = tinkerlyConfig.description, ogImage = '/brand/tinkerly-og.png'} = Astro.props;
 const siteUrl = import.meta.env.PUBLIC_SITE_URL || Astro.site?.href || Astro.url.origin;
 const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
 const ogImageUrl = new URL(ogImage, siteUrl).href;
@@ -23,7 +23,8 @@ const structuredData = {
       logo: new URL('/brand/tinkerly-logo.png', siteUrl).href,
       image: ogImageUrl,
       telephone: '+50583621351',
-      areaServed: { '@type': 'Country', name: 'Nicaragua' },
+      areaServed: { '@type': 'City', name: 'Managua' },
+      address: { '@type': 'PostalAddress', addressLocality: 'Managua', addressCountry: 'NI' },
       contactPoint: [{
         '@type': 'ContactPoint',
         telephone: '+50583621351',
@@ -77,7 +78,8 @@ const structuredData = {
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <link rel="canonical" href={canonicalUrl} />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico?v=2" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=3" />
+    <link rel="alternate icon" type="image/x-icon" href="/favicon.ico?v=3" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />

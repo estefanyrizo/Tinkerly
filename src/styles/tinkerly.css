@@ -318,3 +318,8 @@ img {display:block; max-width:100%;}
 .tk-kicker__star{display:inline-flex;align-items:center;justify-content:center;}
 .tk-kicker__star .tk-brand-icon{width:16px;height:16px;}
 .tk-process__symbol .tk-brand-icon{width:32px;height:32px;}
+
+/* Clear, visible location without adding visual clutter. */
+.tk-hero__location{margin-top:1rem;color:var(--tk-berry);font-size:.78rem;font-weight:600;letter-spacing:.015em;}
+.tk-footer__grid .tk-footer__location{margin-top:.7rem;color:var(--tk-berry);font-size:.79rem;font-weight:600;}
+:root[data-theme="dark"] .tk-hero__location,:root[data-theme="dark"] .tk-footer__grid .tk-footer__location{color:#E3ACBF;}

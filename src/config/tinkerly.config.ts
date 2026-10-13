@@ -1,8 +1,8 @@
 /** Contenido principal de Tinkerly. Completa los canales antes de publicar. */
 export const tinkerlyConfig = {
   name: 'Tinkerly',
-  tagline: 'Papelería creativa personalizada en Nicaragua',
-  description: 'Papelería creativa personalizada en Nicaragua: stickers, tarjetas, etiquetas y detalles por encargo. Descubre ideas y consulta tu pedido con Tinkerly.',
+  tagline: 'Papelería creativa personalizada en Managua, Nicaragua',
+  description: 'Papelería creativa personalizada en Managua, Nicaragua: stickers, tarjetas, etiquetas y detalles por encargo. Descubre Tinkerly y consulta tu pedido.',
   navigation: [
     { label: 'Inicio', href: '/#inicio' },
     { label: 'Ideas', href: '/#ideas' },
