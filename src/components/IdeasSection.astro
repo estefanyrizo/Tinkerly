@@ -1,13 +1,13 @@
 ---
 import { tinkerlyConfig, getWhatsAppUrl } from '../config/tinkerly.config';
 const wa = getWhatsAppUrl();
-const contact = wa ?? '#contacto';
+const contact = wa ?? '#como-pedir';
 ---
   <section id="ideas" class="tk-section tk-ideas">
     <div class="tk-container">
       <div class="tk-section-head" data-reveal>
-        <div><p class="tk-kicker">✦ EXPLORA UN POQUITO</p><h2>Un mundo de <em>ideas bonitas.</em></h2></div>
-        <p>Una selección de posibilidades para inspirarte. Si tienes algo diferente en mente, cuéntanos y revisaremos si podemos crearlo.</p>
+        <div><p class="tk-kicker">IDEAS DE PAPELERÍA</p><h2>Un mundo de <em>ideas bonitas.</em></h2></div>
+        <p>Explora algunas ideas para personalizar. Si buscas algo diferente, también puedes consultarnos.</p>
       </div>
       <div class="tk-ideas__grid">
         {tinkerlyConfig.ideas.map((idea, i) => (

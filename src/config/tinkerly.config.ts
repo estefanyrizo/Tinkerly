@@ -2,7 +2,7 @@
 export const tinkerlyConfig = {
   name: 'Tinkerly',
   tagline: 'Papelería creativa por encargo',
-  description: 'Papelería creativa personalizada. Explora ideas de stickers, tarjetas y detalles para tus momentos especiales. Cada pedido se cotiza según disponibilidad.',
+  description: 'Papelería creativa personalizada: stickers, tarjetas, etiquetas y detalles elaborados por encargo. Descubre ideas para personalizar.',
   navigation: [
     { label: 'Inicio', href: '/#inicio' },
     { label: 'Ideas', href: '/#ideas' },
@@ -20,10 +20,10 @@ export const tinkerlyConfig = {
     { id: 'detalles', title: 'Detalles para celebrar', caption: 'Ideas creativas para regalar y compartir.', image: '/images/details.webp', alt: 'Imagen conceptual de detalles decorativos para regalos y celebraciones.' },
   ],
   faqs: [
-    { question: '¿Los productos están disponibles para entrega inmediata?', answer: 'No. Trabajamos exclusivamente bajo pedido. Antes de confirmarlo revisamos el diseño, los materiales y nuestra disponibilidad.' },
-    { question: '¿Cuánto tarda la elaboración?', answer: 'Depende del producto y la cantidad. Trabajamos principalmente por las noches y los fines de semana, por lo que confirmamos la fecha de entrega de cada solicitud antes de aceptar el pedido.' },
-    { question: '¿Puedo pedir algo que no aparece en la página?', answer: '¡Sí! Puedes compartir tu idea o una referencia. Revisaremos si podemos realizarla con los materiales y equipos disponibles.' },
-    { question: '¿Cómo conozco el precio?', answer: 'Cada trabajo se cotiza según cantidad, materiales, tamaño, diseño y tiempo de elaboración. No se considera confirmado hasta acordar esos detalles contigo.' },
+    { question: '¿Los productos están disponibles para entrega inmediata?', answer: 'Nuestros productos se elaboran por encargo. Si necesitas algo para una fecha especial, consúltanos con anticipación.' },
+    { question: '¿Cuánto tarda la elaboración?', answer: 'Depende del producto, la cantidad y la personalización. Te confirmaremos una fecha de entrega antes de comenzar.' },
+    { question: '¿Puedo pedir algo que no aparece en la página?', answer: '¡Sí! Cuéntanos tu idea y envíanos una referencia, si tienes. Te compartiremos las opciones disponibles.' },
+    { question: '¿Cómo conozco el precio?', answer: 'Envíanos el producto que te interesa, la cantidad y los detalles de personalización. Te enviaremos una cotización antes de confirmar.' },
   ],
 } as const;
 

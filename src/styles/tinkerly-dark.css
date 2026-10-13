@@ -2,9 +2,14 @@
 .tk-theme-toggle {
   width:44px;height:44px;flex:none;display:grid;place-items:center;
   background:transparent;color:var(--tk-berry);border:0;box-shadow:none;padding:0;border-radius:50%;cursor:pointer;
-  transition:transform .25s ease,color .25s ease;
+  transition:color .25s ease;
 }
-.tk-theme-toggle:hover {transform:rotate(-12deg);color:var(--tk-burgundy);background:transparent;}
+.tk-theme-toggle:hover {color:var(--tk-burgundy);background:transparent;}
+.tk-theme-toggle > svg {transform-origin:center;transition:transform .32s cubic-bezier(.2,.8,.2,1),filter .32s ease;}
+.tk-theme-toggle:hover > svg {transform:translateY(-2px) rotate(-7deg);filter:drop-shadow(0 3px 3px rgba(138,59,88,.23));}
+.tk-theme-toggle:active > svg {transform:scale(.91);}
+.tk-theme-toggle__stars {transform-origin:24px 10px;transition:transform .32s ease;}
+.tk-theme-toggle:hover .tk-theme-toggle__stars {transform:scale(1.15);}
 .tk-theme-toggle__sun {display:none;}
 :root[data-theme='dark'] .tk-theme-toggle__moon {display:none;}
 :root[data-theme='dark'] .tk-theme-toggle__sun {display:block;}
@@ -104,3 +109,9 @@
 :root[data-theme='dark'] .tk-hero__decoration {color:#E3ACBF;}
 :root[data-theme='dark'] .tk-header__menu-button {color:#F2CEDD;background:transparent;}
 :root[data-theme='dark'] .tk-header__menu-button:hover {color:#FFFFFF;background:transparent;}
+
+@media (prefers-reduced-motion: reduce) {
+  .tk-theme-toggle > svg,.tk-theme-toggle__stars {transition:none;}
+  .tk-theme-toggle:hover > svg,.tk-theme-toggle:active > svg,
+  .tk-theme-toggle:hover .tk-theme-toggle__stars {transform:none;filter:none;}
+}

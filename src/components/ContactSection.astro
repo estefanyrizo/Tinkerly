@@ -6,10 +6,9 @@ const wa = getWhatsAppUrl();
     <div class="tk-container tk-contact__banner" data-reveal>
       <span class="tk-contact__spark tk-contact__spark--one" aria-hidden="true">✧</span>
       <span class="tk-contact__spark tk-contact__spark--two" aria-hidden="true">✦</span>
-      <p class="tk-kicker">✳ TU IDEA MERECE UN LUGAR</p>
-      <h2>¿Tienes algo bonito <em>en mente?</em></h2>
-      <p>Cuéntanos qué quieres crear. Con gusto revisamos si podemos hacerlo y en qué fecha.</p>
-      {wa ? <a class="tk-button tk-button--primary" href={wa} target="_blank" rel="noopener noreferrer">Escríbenos por WhatsApp <span aria-hidden="true">↗</span></a> : <p class="tk-contact__unavailable">Pronto habilitaremos nuestro canal de WhatsApp. Aún no se aceptan pedidos desde esta página.</p>}
-      <span class="tk-contact__bottom">Trabajamos únicamente bajo pedido · Sujeto a disponibilidad</span>
+      <p class="tk-kicker">PEDIDOS PERSONALIZADOS</p>
+      <h2>¿Qué te gustaría <em>personalizar?</em></h2>
+      <p>Cuéntanos qué producto buscas, cuántas unidades necesitas y si tienes alguna referencia.</p>
+      {wa ? <a class="tk-button tk-button--primary" href={wa} target="_blank" rel="noopener noreferrer">Escríbenos por WhatsApp <span aria-hidden="true">↗</span></a> : <a class="tk-button tk-button--primary" href="#ideas">Explorar ideas <span aria-hidden="true">→</span></a>}
     </div>
   </section>
