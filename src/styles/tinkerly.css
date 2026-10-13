@@ -256,15 +256,13 @@ img {display:block; max-width:100%;}
 @media(max-width:620px){.tk-header__actions{gap:.15rem;}}
 
 
-/* ---------- Tinkerly: editorial motion and outline floral details ---------- */
+/* ---------- Tinkerly: editorial motion and subtle sparkle details ---------- */
 .tk-bloom-bar__inner {justify-content:center;column-gap:clamp(.65rem,2.6vw,2.7rem);row-gap:.65rem;}
-.tk-bloom-flower {flex:0 0 24px;color:#BC8599;transition:transform .5s ease,color .3s ease;}
-.tk-bloom-bar:hover .tk-bloom-flower {transform:rotate(18deg);color:#8A3B58;}
-.tk-hero__flower {position:absolute;width:47px;height:47px;right:-13px;bottom:5px;color:#AC6D84;pointer-events:none;}
+.tk-bloom-sparkle {flex:0 0 20px;color:#BC8599;}
 .tk-contact__banner {isolation:isolate;}
-.tk-contact__flower {position:absolute;z-index:0;width:84px;height:84px;color:#AD6886;pointer-events:none;opacity:.65;}
-.tk-contact__flower--left {top:13%;left:5%;transform:rotate(-18deg);}
-.tk-contact__flower--right {bottom:15%;right:6%;width:60px;height:60px;transform:rotate(25deg);}
+.tk-contact__sparkle {position:absolute;z-index:0;width:38px;height:38px;color:#AD6886;pointer-events:none;opacity:.65;}
+.tk-contact__sparkle--left {top:16%;left:7%;}
+.tk-contact__sparkle--right {bottom:18%;right:8%;width:26px;height:26px;}
 .tk-contact__banner > .tk-kicker,
 .tk-contact__banner > h2,
 .tk-contact__banner > p,
@@ -277,17 +275,15 @@ img {display:block; max-width:100%;}
 }
 .tk-contact__banner .tk-button:hover::after {transform:translateX(125%);}
 @media (max-width:620px){
-  .tk-hero__flower {width:32px;height:32px;right:0;bottom:-2px;}
-  .tk-contact__flower {width:48px;height:48px;opacity:.4;}
-  .tk-contact__flower--left {top:8%;left:1.5%;}
-  .tk-contact__flower--right {bottom:8%;right:1.5%;width:40px;height:40px;}
+  .tk-contact__sparkle {width:25px;height:25px;opacity:.36;}
+  .tk-contact__sparkle--left {top:8%;left:4%;}
+  .tk-contact__sparkle--right {bottom:8%;right:4%;width:19px;height:19px;}
   .tk-bloom-bar__inner {justify-content:center;text-align:center;column-gap:.85rem;}
   .tk-statement__star {display:none;}
 }
 @media (prefers-reduced-motion:no-preference){
   @keyframes tk-hero-arrive {from{opacity:0;transform:translate3d(0,20px,0)}to{opacity:1;transform:translate3d(0,0,0)}}
   @keyframes tk-hero-art-arrive {from{opacity:0;transform:translate3d(18px,24px,0) scale(.97)}to{opacity:1;transform:translate3d(0,0,0) scale(1)}}
-  @keyframes tk-flower-float {0%,100%{transform:translate3d(0,0,0) rotate(-8deg)}50%{transform:translate3d(0,-12px,0) rotate(12deg)}}
   @keyframes tk-contact-enter {from{opacity:0;transform:translate3d(0,14px,0)}to{opacity:1;transform:translate3d(0,0,0)}}
   .tk-hero__intro,.tk-hero__title,.tk-hero__desc,.tk-hero__buttons,.tk-hero__mini {animation:tk-hero-arrive .8s cubic-bezier(.22,1,.36,1) both;}
   .tk-hero__intro {animation-delay:.07s;}
@@ -296,11 +292,6 @@ img {display:block; max-width:100%;}
   .tk-hero__buttons {animation-delay:.33s;}
   .tk-hero__mini {animation-delay:.42s;}
   [data-tk-hero-art] {animation:tk-hero-art-arrive 1.05s cubic-bezier(.22,1,.36,1) .24s both;}
-  .tk-hero__flower {animation:tk-flower-float 6s ease-in-out 1.25s infinite;}
-  .tk-contact__flower--left {animation:tk-contact-flower-left 8s ease-in-out infinite;}
-  .tk-contact__flower--right {animation:tk-contact-flower-right 7s ease-in-out -2s infinite;}
-  @keyframes tk-contact-flower-left {0%,100%{transform:translateY(0) rotate(-18deg)}50%{transform:translateY(-9px) rotate(0deg)}}
-  @keyframes tk-contact-flower-right {0%,100%{transform:translateY(0) rotate(25deg)}50%{transform:translateY(8px) rotate(8deg)}}
   .tk-motion-ready .tk-contact__banner.tk-in-view > .tk-kicker,
   .tk-motion-ready .tk-contact__banner.tk-in-view > h2,
   .tk-motion-ready .tk-contact__banner.tk-in-view > p,
@@ -310,8 +301,5 @@ img {display:block; max-width:100%;}
   .tk-motion-ready .tk-contact__banner.tk-in-view > .tk-button {animation-delay:.30s;}
 }
 @media (prefers-reduced-motion:reduce){
-  .tk-hero__flower,.tk-contact__flower {animation:none!important;}
   .tk-contact__banner .tk-button::after {display:none;}
-  .tk-bloom-flower {transition:none;}
-  .tk-bloom-bar:hover .tk-bloom-flower {transform:none;}
 }
