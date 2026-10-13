@@ -1,0 +1,28 @@
+---
+import { getWhatsAppUrl } from '../config/tinkerly.config';
+const wa = getWhatsAppUrl();
+const contact = wa ?? '#contacto';
+---
+  <section id="inicio" class="tk-hero">
+    <div class="tk-container tk-hero__inner">
+      <div class="tk-hero__content">
+        <div class="tk-kicker tk-hero__intro"><span class="tk-kicker__star" aria-hidden="true">✦</span> PAPELERÍA CREATIVA · HECHA PARA TI</div>
+        <h1 class="tk-hero__title">Pequeños detalles,<br/><em>grandes emociones.</em></h1>
+        <p class="tk-hero__desc">Las mejores ideas merecen convertirse en algo especial. En Tinkerly exploramos contigo papelería y detalles personalizados, hechos con cariño y por encargo.</p>
+        <div class="tk-hero__buttons">
+          <a class="tk-button tk-button--primary" href={contact} {...(wa ? { target:'_blank', rel:'noopener noreferrer' } : {})}>Cuéntanos tu idea <span aria-hidden="true">↗</span></a>
+          <a class="tk-button tk-button--ghost" href="#ideas">Ver ideas <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="tk-hero__mini"><span aria-hidden="true">✳</span> Personalizado para ti <i></i><span aria-hidden="true">♡</span> Elaboración bajo pedido</div>
+      </div>
+      <div class="tk-hero__showcase">
+        <figure class="tk-hero__photo">
+          <img src="/images/hero-stationery.webp" width="1400" height="1100" alt="Fotografía conceptual de papelería y regalos en tonos rosados, con tarjetas, cintas y flores" fetchpriority="high" decoding="async" />
+        </figure>
+        <span class="tk-float-star tk-float-star--one" aria-hidden="true">✧</span>
+        <span class="tk-float-star tk-float-star--two" aria-hidden="true">✦</span>
+        <span class="tk-hero__sticker">Un detalle<br/><strong>muy tuyo ♡</strong></span>
+        <span class="tk-hero__photo-label">✦ ideas con intención</span>
+      </div>
+    </div>
+  </section>

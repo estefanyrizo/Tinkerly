@@ -1,0 +1,44 @@
+<button class="tk-theme-toggle" type="button" data-tk-theme-toggle aria-label="Activar modo oscuro" aria-pressed="false" title="Activar modo oscuro">
+        <svg class="tk-theme-toggle__moon" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M19.5 15.5A8.1 8.1 0 0 1 8.5 4.5a8 8 0 1 0 11 11Z" />
+          <path d="m18 3 .55 1.45L20 5l-1.45.55L18 7l-.55-1.45L16 5l1.45-.55L18 3Z" fill="currentColor" stroke="none" />
+          <path d="m21 9 .33.85.87.35-.87.35L21 11.4l-.33-.85-.87-.35.87-.35L21 9Z" fill="currentColor" stroke="none" />
+        </svg>
+        <svg class="tk-theme-toggle__sun" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4" /><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42" /></svg>
+      </button>
+<script>
+  // Follow system theme unless the visitor explicitly chooses one.
+  const themeButton = document.querySelector<HTMLButtonElement>('[data-tk-theme-toggle]');
+  const themeMedia = window.matchMedia('(prefers-color-scheme: dark)');
+  const themeKey = 'tinkerly-theme';
+  const readSavedTheme = (): 'dark' | 'light' | null => {
+    try {
+      const saved = localStorage.getItem(themeKey);
+      return saved === 'dark' || saved === 'light' ? saved : null;
+    } catch { return null; }
+  };
+  const applyTheme = (theme: 'dark' | 'light') => {
+    document.documentElement.dataset.theme = theme;
+    document.documentElement.style.colorScheme = theme;
+    const label = theme === 'dark' ? 'Activar modo claro' : 'Activar modo oscuro';
+    themeButton?.setAttribute('aria-label', label);
+    themeButton?.setAttribute('title', label);
+    themeButton?.setAttribute('aria-pressed', String(theme === 'dark'));
+    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', theme === 'dark' ? '#1E1720' : '#FFFFFF');
+  };
+  applyTheme(document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light');
+  themeButton?.addEventListener('click', () => {
+    const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+    try { localStorage.setItem(themeKey, next); } catch {}
+    applyTheme(next);
+  });
+  themeMedia.addEventListener('change', (event) => {
+    if (!readSavedTheme()) applyTheme(event.matches ? 'dark' : 'light');
+  });
+  window.addEventListener('storage', (event) => {
+    if (event.key === themeKey || event.key === null) {
+      applyTheme(readSavedTheme() ?? (themeMedia.matches ? 'dark' : 'light'));
+    }
+  });
+
+</script>

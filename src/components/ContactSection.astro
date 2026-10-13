@@ -1,0 +1,15 @@
+---
+import { getWhatsAppUrl } from '../config/tinkerly.config';
+const wa = getWhatsAppUrl();
+---
+  <section id="contacto" class="tk-section tk-contact">
+    <div class="tk-container tk-contact__banner" data-reveal>
+      <span class="tk-contact__spark tk-contact__spark--one" aria-hidden="true">✧</span>
+      <span class="tk-contact__spark tk-contact__spark--two" aria-hidden="true">✦</span>
+      <p class="tk-kicker">✳ TU IDEA MERECE UN LUGAR</p>
+      <h2>¿Tienes algo bonito <em>en mente?</em></h2>
+      <p>Cuéntanos qué quieres crear. Con gusto revisamos si podemos hacerlo y en qué fecha.</p>
+      {wa ? <a class="tk-button tk-button--primary" href={wa} target="_blank" rel="noopener noreferrer">Escríbenos por WhatsApp <span aria-hidden="true">↗</span></a> : <p class="tk-contact__unavailable">Pronto habilitaremos nuestro canal de WhatsApp. Aún no se aceptan pedidos desde esta página.</p>}
+      <span class="tk-contact__bottom">Trabajamos únicamente bajo pedido · Sujeto a disponibilidad</span>
+    </div>
+  </section>

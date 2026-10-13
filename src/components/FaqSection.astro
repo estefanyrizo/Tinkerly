@@ -1,0 +1,16 @@
+---
+import { tinkerlyConfig } from '../config/tinkerly.config';
+---
+  <section id="preguntas" class="tk-section tk-faq">
+    <div class="tk-container tk-faq__grid">
+      <div data-reveal><p class="tk-kicker">✦ ANTES DE EMPEZAR</p><h2>Lo que quizás<br/><em>te preguntes.</em></h2><p class="tk-faq__intro">Queremos que tengas claro cómo funciona pedir algo personalizado en Tinkerly.</p></div>
+      <div class="tk-faq__list" data-reveal>
+        {tinkerlyConfig.faqs.map((item, i) => (
+          <details class="tk-faq__item" open={i === 0}>
+            <summary>{item.question}<span class="tk-faq__plus" aria-hidden="true">+</span></summary>
+            <p>{item.answer}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>

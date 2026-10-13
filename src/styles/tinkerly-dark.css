@@ -1,10 +1,10 @@
 /* Tinkerly dark appearance. Product photos retain their original color. */
 .tk-theme-toggle {
   width:44px;height:44px;flex:none;display:grid;place-items:center;
-  background:var(--tk-pink);color:var(--tk-berry);border:0;border-radius:50%;cursor:pointer;
-  transition:transform .25s ease,background .25s ease,color .25s ease;
+  background:transparent;color:var(--tk-berry);border:0;box-shadow:none;padding:0;border-radius:50%;cursor:pointer;
+  transition:transform .25s ease,color .25s ease;
 }
-.tk-theme-toggle:hover {transform:rotate(-12deg);background:var(--tk-mist);}
+.tk-theme-toggle:hover {transform:rotate(-12deg);color:var(--tk-burgundy);background:transparent;}
 .tk-theme-toggle__sun {display:none;}
 :root[data-theme='dark'] .tk-theme-toggle__moon {display:none;}
 :root[data-theme='dark'] .tk-theme-toggle__sun {display:block;}
@@ -41,8 +41,8 @@
 :root[data-theme='dark'] .tk-footer__brand img {filter:brightness(0) invert(1);opacity:.92;}
 :root[data-theme='dark'] .tk-header__nav a {color:var(--tk-muted);}
 :root[data-theme='dark'] .tk-header__nav a:hover {color:#F9EEF3;}
-:root[data-theme='dark'] .tk-theme-toggle {color:#F2CEDD;background:#402E3D;}
-:root[data-theme='dark'] .tk-theme-toggle:hover {background:#53394B;}
+:root[data-theme='dark'] .tk-theme-toggle {color:#F2CEDD;background:transparent;}
+:root[data-theme='dark'] .tk-theme-toggle:hover {color:#FFFFFF;background:transparent;}
 :root[data-theme='dark'] .tk-header__menu-button span {background:#E5B5C8;}
 :root[data-theme='dark'] .tk-header__mobile {background:#281F2A;box-shadow:0 17px 35px rgba(0,0,0,.22);}
 :root[data-theme='dark'] .tk-header__mobile-links>a:not(.tk-button) {color:var(--tk-text);}
