@@ -1,0 +1,11 @@
+/* Base CSS independiente de Astrolify.
+   Los estilos de marca se encuentran en tinkerly.css. */
+:root { color-scheme: light; }
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; min-width: 320px; }
+h1, h2, h3, h4, h5, h6, p, figure { margin: 0; }
+button, input, textarea, select { font: inherit; }
+button { cursor: pointer; }
+a { text-decoration: none; }
+img { max-width: 100%; height: auto; }

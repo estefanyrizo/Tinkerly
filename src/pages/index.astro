@@ -1,0 +1,124 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { tinkerlyConfig, getWhatsAppUrl } from '../config/tinkerly.config';
+const wa = getWhatsAppUrl();
+const contact = wa ?? '#contacto';
+---
+<Layout>
+  <section id="inicio" class="tk-hero">
+    <div class="tk-container tk-hero__inner">
+      <div class="tk-hero__content">
+        <div class="tk-kicker tk-hero__intro"><span class="tk-kicker__star" aria-hidden="true">✦</span> PAPELERÍA CREATIVA · HECHA PARA TI</div>
+        <h1 class="tk-hero__title">Pequeños detalles,<br/><em>grandes emociones.</em></h1>
+        <p class="tk-hero__desc">Las mejores ideas merecen convertirse en algo especial. En Tinkerly exploramos contigo papelería y detalles personalizados, hechos con cariño y por encargo.</p>
+        <div class="tk-hero__buttons">
+          <a class="tk-button tk-button--primary" href={contact} {...(wa ? { target:'_blank', rel:'noopener noreferrer' } : {})}>Cuéntanos tu idea <span aria-hidden="true">↗</span></a>
+          <a class="tk-button tk-button--ghost" href="#ideas">Ver ideas <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="tk-hero__mini"><span aria-hidden="true">✳</span> Personalizado para ti <i></i><span aria-hidden="true">♡</span> Elaboración bajo pedido</div>
+      </div>
+      <div class="tk-hero__showcase">
+        <figure class="tk-hero__photo">
+          <img src="/images/hero-stationery.webp" width="1400" height="1100" alt="Fotografía conceptual de papelería y regalos en tonos rosados, con tarjetas, cintas y flores" fetchpriority="high" decoding="async" />
+        </figure>
+        <span class="tk-float-star tk-float-star--one" aria-hidden="true">✧</span>
+        <span class="tk-float-star tk-float-star--two" aria-hidden="true">✦</span>
+        <span class="tk-hero__sticker">Un detalle<br/><strong>muy tuyo ♡</strong></span>
+        <span class="tk-hero__photo-label">✦ ideas con intención</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="tk-bloom-bar" aria-label="Pensado para momentos especiales">
+    <div class="tk-container tk-bloom-bar__inner">
+      <span>✳ Diseños con intención</span><span aria-hidden="true">✦</span><span>Personalizado a tu estilo</span><span aria-hidden="true">✦</span><span>Momentos especiales</span><span aria-hidden="true">✦</span><span>Elaborado por encargo</span>
+    </div>
+  </div>
+
+  <section id="ideas" class="tk-section tk-ideas">
+    <div class="tk-container">
+      <div class="tk-section-head" data-reveal>
+        <div><p class="tk-kicker">✦ EXPLORA UN POQUITO</p><h2>Un mundo de <em>ideas bonitas.</em></h2></div>
+        <p>Una selección de posibilidades para inspirarte. Si tienes algo diferente en mente, cuéntanos y revisaremos si podemos crearlo.</p>
+      </div>
+      <div class="tk-ideas__grid">
+        {tinkerlyConfig.ideas.map((idea, i) => (
+          <article class="tk-idea" data-reveal style={`--tk-delay:${i * 105}ms`}>
+            <a href={contact} class="tk-idea__link" aria-label={`Consultar posibilidad de ${idea.title}`} {...(wa ? { target:'_blank', rel:'noopener noreferrer' } : {})}>
+              <div class="tk-idea__photo"><img src={idea.image} alt={idea.alt} loading="lazy" decoding="async" width="900" height="990" /></div>
+              <div class="tk-idea__info"><div><h3>{idea.title}</h3><p>{idea.caption}</p></div><span class="tk-idea__arrow" aria-hidden="true">↗</span></div>
+            </a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="tk-section tk-statement" aria-label="La esencia de Tinkerly">
+    <div class="tk-container tk-statement__inner" data-reveal>
+      <span class="tk-statement__star" aria-hidden="true">✧</span>
+      <p class="tk-kicker">LO QUE NOS INSPIRA</p>
+      <h2>Hay detalles pequeños<br/>que se vuelven <em>inolvidables.</em></h2>
+      <p>No necesitas una gran ocasión para hacer sentir especial a alguien. A veces, basta una idea hecha a tu manera.</p>
+      <span class="tk-statement__star tk-statement__star--last" aria-hidden="true">✦</span>
+    </div>
+  </section>
+
+  <section id="como-pedir" class="tk-section tk-process">
+    <div class="tk-container">
+      <div class="tk-process__head" data-reveal>
+        <p class="tk-kicker">✦ SIN COMPLICACIONES</p>
+        <h2>¿Cómo hacer <em>tu pedido?</em></h2>
+        <p>Trabajamos por encargo y confirmamos cada solicitud según nuestros tiempos y materiales disponibles.</p>
+      </div>
+      <div class="tk-process__grid">
+        <article class="tk-process__step" data-reveal style="--tk-delay:0ms"><div class="tk-process__number">01</div><div class="tk-process__symbol" aria-hidden="true">✎</div><h3>Cuéntanos tu idea</h3><p>Envíanos una descripción, referencias, cantidad y fecha deseada.</p></article>
+        <article class="tk-process__step" data-reveal style="--tk-delay:100ms"><div class="tk-process__number">02</div><div class="tk-process__symbol" aria-hidden="true">✧</div><h3>Revisamos opciones</h3><p>Evaluamos materiales, diseño, precio y tiempo de elaboración.</p></article>
+        <article class="tk-process__step" data-reveal style="--tk-delay:200ms"><div class="tk-process__number">03</div><div class="tk-process__symbol" aria-hidden="true">♡</div><h3>Confirmamos contigo</h3><p>Acordamos los detalles antes de aceptar el pedido.</p></article>
+        <article class="tk-process__step" data-reveal style="--tk-delay:300ms"><div class="tk-process__number">04</div><div class="tk-process__symbol" aria-hidden="true">✦</div><h3>¡Manos a la obra!</h3><p>Preparamos el trabajo y te avisamos cuando esté listo.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="sobre-tinkerly" class="tk-section tk-about">
+    <div class="tk-container tk-about__grid">
+      <div class="tk-about__media" data-reveal>
+        <img src="/images/atelier.webp" width="1150" height="850" alt="Escena conceptual del proceso creativo con papelería, tijeras y cintas" loading="lazy" decoding="async" />
+        <div class="tk-about__stamp">✳<br/>Hecho<br/>con cariño</div>
+      </div>
+      <div class="tk-about__content" data-reveal>
+        <p class="tk-kicker">✦ UN POCO SOBRE TINKERLY</p>
+        <h2>Un espacio para<br/><em>crear cosas lindas.</em></h2>
+        <p>Tinkerly nace del gusto por transformar ideas en pequeños detalles que transmitan algo especial. Somos un emprendimiento que está comenzando, y cada pedido recibe atención personalizada.</p>
+        <p>Por ahora trabajamos con recursos y horarios limitados: elaboramos durante las noches y los fines de semana. Por eso preferimos hacer las cosas con calma, confirmar cada solicitud y cuidar el resultado.</p>
+        <a class="tk-inline-link" href="#como-pedir">Así trabajamos <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="preguntas" class="tk-section tk-faq">
+    <div class="tk-container tk-faq__grid">
+      <div data-reveal><p class="tk-kicker">✦ ANTES DE EMPEZAR</p><h2>Lo que quizás<br/><em>te preguntes.</em></h2><p class="tk-faq__intro">Queremos que tengas claro cómo funciona pedir algo personalizado en Tinkerly.</p></div>
+      <div class="tk-faq__list" data-reveal>
+        {tinkerlyConfig.faqs.map((item, i) => (
+          <details class="tk-faq__item" open={i === 0}>
+            <summary>{item.question}<span class="tk-faq__plus" aria-hidden="true">+</span></summary>
+            <p>{item.answer}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto" class="tk-section tk-contact">
+    <div class="tk-container tk-contact__banner" data-reveal>
+      <span class="tk-contact__spark tk-contact__spark--one" aria-hidden="true">✧</span>
+      <span class="tk-contact__spark tk-contact__spark--two" aria-hidden="true">✦</span>
+      <p class="tk-kicker">✳ TU IDEA MERECE UN LUGAR</p>
+      <h2>¿Tienes algo bonito <em>en mente?</em></h2>
+      <p>Cuéntanos qué quieres crear. Con gusto revisamos si podemos hacerlo y en qué fecha.</p>
+      {wa ? <a class="tk-button tk-button--primary" href={wa} target="_blank" rel="noopener noreferrer">Escríbenos por WhatsApp <span aria-hidden="true">↗</span></a> : <p class="tk-contact__unavailable">Pronto habilitaremos nuestro canal de WhatsApp. Aún no se aceptan pedidos desde esta página.</p>}
+      <span class="tk-contact__bottom">Trabajamos únicamente bajo pedido · Sujeto a disponibilidad</span>
+    </div>
+  </section>
+</Layout>

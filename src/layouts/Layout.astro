@@ -1,0 +1,66 @@
+---
+import '../styles/globals.css';
+import '../styles/tinkerly.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { tinkerlyConfig } from '../config/tinkerly.config';
+interface Props { title?: string; description?: string; ogImage?: string; }
+const {title = `${tinkerlyConfig.name} | ${tinkerlyConfig.tagline}`, description = tinkerlyConfig.description, ogImage = '/brand/tinkerly-og.png'} = Astro.props;
+const siteUrl = import.meta.env.PUBLIC_SITE_URL || Astro.site?.href || Astro.url.origin;
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
+const ogImageUrl = new URL(ogImage, siteUrl).href;
+const structuredData = {
+  '@context': 'https://schema.org', '@type': 'Organization', name: tinkerlyConfig.name,
+  description, url: new URL('/', siteUrl).href,
+  logo: new URL('/brand/tinkerly-logo.png', siteUrl).href,
+};
+---
+<!doctype html>
+<html lang="es" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#FFFFFF" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_NI" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+  </head>
+  <body>
+    <a class="tk-skip" href="#contenido">Saltar al contenido</a>
+    <Header />
+    <main id="contenido"><slot /></main>
+    <Footer />
+    <script>
+      // Las animaciones se ejecutan solo si el usuario permite movimiento.
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!reduceMotion && 'IntersectionObserver' in window) {
+        document.documentElement.classList.add('tk-motion-ready');
+        const observer = new IntersectionObserver((entries, obs) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('tk-in-view');
+              obs.unobserve(entry.target);
+            }
+          });
+        }, { rootMargin: '0px 0px -45px 0px', threshold: 0.07 });
+        document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
+      }
+    </script>
+  </body>
+</html>

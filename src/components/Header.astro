@@ -1,0 +1,41 @@
+---
+import { tinkerlyConfig, getWhatsAppUrl } from '../config/tinkerly.config';
+const wa = getWhatsAppUrl();
+---
+<header class="tk-header" data-tk-header>
+  <div class="tk-container tk-header__inner">
+    <a class="tk-header__brand" href="/#inicio" aria-label="Tinkerly, ir al inicio">
+      <img src="/brand/tinkerly-mark.png" alt="" width="38" height="43" decoding="async" />
+      <img src="/brand/tinkerly-wordmark.png" alt="Tinkerly" width="132" height="42" decoding="async" />
+    </a>
+    <nav class="tk-header__nav" aria-label="Navegación principal">
+      {tinkerlyConfig.navigation.map(item => <a href={item.href}>{item.label}</a>)}
+    </nav>
+    <div class="tk-header__actions">
+      <a class="tk-button tk-button--primary tk-header__cta" href={wa ?? '/#contacto'} {...(wa ? {target: '_blank', rel: 'noopener noreferrer'} : {})}>Consultar pedido <span aria-hidden="true">↗</span></a>
+      <button class="tk-header__menu-button" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="tk-mobile-menu" data-tk-menu-button>
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <nav id="tk-mobile-menu" class="tk-header__mobile" aria-label="Menú móvil" hidden data-tk-mobile-menu>
+    <div class="tk-container tk-header__mobile-links">
+      {tinkerlyConfig.navigation.map(item => <a href={item.href}>{item.label}</a>)}
+      <a class="tk-button tk-button--primary" href={wa ?? '/#contacto'} {...(wa ? {target:'_blank', rel:'noopener noreferrer'} : {})}>Consultar pedido ↗</a>
+    </div>
+  </nav>
+</header>
+<script>
+  const toggle = document.querySelector<HTMLButtonElement>('[data-tk-menu-button]');
+  const mobile = document.querySelector<HTMLElement>('[data-tk-mobile-menu]');
+  const setMenu = (open: boolean) => {
+    if (!toggle || !mobile) return;
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+    mobile.hidden = !open;
+  };
+  toggle?.addEventListener('click', () => setMenu(toggle.getAttribute('aria-expanded') !== 'true'));
+  mobile?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
+  window.addEventListener('resize', () => { if (window.innerWidth > 880) setMenu(false); });
+</script>
