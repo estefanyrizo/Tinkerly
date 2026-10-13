@@ -1,0 +1,98 @@
+/* Tinkerly dark appearance. Product photos retain their original color. */
+.tk-theme-toggle {
+  width:44px;height:44px;flex:none;display:grid;place-items:center;
+  background:var(--tk-pink);color:var(--tk-berry);border:0;border-radius:50%;cursor:pointer;
+  transition:transform .25s ease,background .25s ease,color .25s ease;
+}
+.tk-theme-toggle:hover {transform:rotate(-12deg);background:var(--tk-mist);}
+.tk-theme-toggle__sun {display:none;}
+:root[data-theme='dark'] .tk-theme-toggle__moon {display:none;}
+:root[data-theme='dark'] .tk-theme-toggle__sun {display:block;}
+:root[data-theme='dark'] {
+  color-scheme:dark;--tk-background:#1E1720;--tk-surface:#281F2A;--tk-raised:#342733;--tk-highlight:#412C3B;
+  --tk-text:#F9EEF3;--tk-muted:#D5BFCA;--tk-shadow:0 20px 60px rgba(0,0,0,.22);
+  --ac-bg:#1E1720;--ac-bg-subtle:#281F2A;--ac-bg-muted:#412C3B;
+  --ac-text:#F9EEF3;--ac-text-muted:#D5BFCA;--ac-header-bg:rgba(30,23,32,.95);
+}
+:root[data-theme='dark'] body {background:var(--tk-background);color:var(--tk-text);}
+:root[data-theme='dark'] ::selection {background:#AC6D84;color:#1E1720;}
+:root[data-theme='dark'] :focus-visible {outline-color:#F0C7D6;}
+:root[data-theme='dark'] .tk-section h2,
+:root[data-theme='dark'] .tk-hero__title,
+:root[data-theme='dark'] .tk-idea h3,
+:root[data-theme='dark'] .tk-process__step h3,
+:root[data-theme='dark'] .tk-faq__item summary,
+:root[data-theme='dark'] .tk-footer__grid h2 {color:var(--tk-text);}
+:root[data-theme='dark'] .tk-section h2 em,
+:root[data-theme='dark'] .tk-hero__title em {color:#E3ACBF;}
+:root[data-theme='dark'] .tk-kicker,
+:root[data-theme='dark'] .tk-kicker__star,
+:root[data-theme='dark'] .tk-float-star,
+:root[data-theme='dark'] .tk-statement__star {color:#DFA5BC;}
+:root[data-theme='dark'] .tk-button--primary {background:#C68BA5;color:#20151F;box-shadow:0 12px 26px rgba(0,0,0,.18);}
+:root[data-theme='dark'] .tk-button--primary:hover {background:#E5B5C8;box-shadow:0 16px 34px rgba(0,0,0,.23);}
+:root[data-theme='dark'] .tk-button--ghost,
+:root[data-theme='dark'] .tk-inline-link {color:#F1C5D7;}
+:root[data-theme='dark'] .tk-button--ghost:hover,
+:root[data-theme='dark'] .tk-footer__nav a:hover,
+:root[data-theme='dark'] .tk-footer__link:hover {color:#FFFFFF;}
+:root[data-theme='dark'] .tk-header {background:rgba(30,23,32,.95);}
+:root[data-theme='dark'] .tk-header__brand img,
+:root[data-theme='dark'] .tk-footer__brand img {filter:brightness(0) invert(1);opacity:.92;}
+:root[data-theme='dark'] .tk-header__nav a {color:var(--tk-muted);}
+:root[data-theme='dark'] .tk-header__nav a:hover {color:#F9EEF3;}
+:root[data-theme='dark'] .tk-theme-toggle {color:#F2CEDD;background:#402E3D;}
+:root[data-theme='dark'] .tk-theme-toggle:hover {background:#53394B;}
+:root[data-theme='dark'] .tk-header__menu-button span {background:#E5B5C8;}
+:root[data-theme='dark'] .tk-header__mobile {background:#281F2A;box-shadow:0 17px 35px rgba(0,0,0,.22);}
+:root[data-theme='dark'] .tk-header__mobile-links>a:not(.tk-button) {color:var(--tk-text);}
+:root[data-theme='dark'] .tk-hero {background:linear-gradient(110deg,#1E1720 30%,#2D2130 100%);}
+:root[data-theme='dark'] .tk-hero__desc,
+:root[data-theme='dark'] .tk-hero__mini {color:var(--tk-muted);}
+:root[data-theme='dark'] .tk-hero__mini i {background:#B7899D;}
+:root[data-theme='dark'] .tk-hero__showcase::before {background:#473044;}
+:root[data-theme='dark'] .tk-hero__photo {box-shadow:0 24px 65px rgba(0,0,0,.35);}
+:root[data-theme='dark'] .tk-hero__sticker,
+:root[data-theme='dark'] .tk-hero__photo-label {background:#342733;color:#F1C5D7;box-shadow:0 14px 35px rgba(0,0,0,.22);}
+:root[data-theme='dark'] .tk-bloom-bar {background:#2B202C;}
+:root[data-theme='dark'] .tk-bloom-bar__inner {color:#E1B8CA;}
+:root[data-theme='dark'] .tk-bloom-bar__inner>span:nth-child(even) {color:#B8829B;}
+:root[data-theme='dark'] .tk-section-head>p,
+:root[data-theme='dark'] .tk-idea p,
+:root[data-theme='dark'] .tk-photo-note {color:var(--tk-muted);}
+:root[data-theme='dark'] .tk-idea__photo {background:#372836;}
+:root[data-theme='dark'] .tk-idea__arrow {background:#402D3D;color:#E9B8CC;}
+:root[data-theme='dark'] .tk-idea__link:hover .tk-idea__arrow {background:#54394A;}
+:root[data-theme='dark'] .tk-statement {background:#281D28;}
+:root[data-theme='dark'] .tk-statement p:last-of-type,
+:root[data-theme='dark'] .tk-process__head>p:last-child,
+:root[data-theme='dark'] .tk-process__step p {color:var(--tk-muted);}
+:root[data-theme='dark'] .tk-process__number {color:#E0AEC3;}
+:root[data-theme='dark'] .tk-process__step:not(:last-child)::after {color:#B8829B;}
+:root[data-theme='dark'] .tk-process__symbol {background:#402D3D;color:#EABBD0;}
+:root[data-theme='dark'] .tk-process__step:hover .tk-process__symbol {background:#55364B;}
+:root[data-theme='dark'] .tk-about {background:#231B25;}
+:root[data-theme='dark'] .tk-about__content>p:not(.tk-kicker),
+:root[data-theme='dark'] .tk-faq__intro,
+:root[data-theme='dark'] .tk-faq__item p {color:var(--tk-muted);}
+:root[data-theme='dark'] .tk-about__media>img {box-shadow:0 20px 50px rgba(0,0,0,.27);}
+:root[data-theme='dark'] .tk-about__stamp {background:#51364A;color:#F5D8E3;box-shadow:0 12px 24px rgba(0,0,0,.24);}
+:root[data-theme='dark'] .tk-faq__item {background:#2C222E;}
+:root[data-theme='dark'] .tk-faq__item[open] {background:#39283A;}
+:root[data-theme='dark'] .tk-faq__plus {color:#E4B0C4;}
+:root[data-theme='dark'] .tk-contact__banner {background:linear-gradient(110deg,#432C3D,#513449 64%,#59394B);}
+:root[data-theme='dark'] .tk-contact__banner::after {background:rgba(242,206,221,.06);}
+:root[data-theme='dark'] .tk-contact__banner>p:not(.tk-kicker):not(.tk-contact__unavailable),
+:root[data-theme='dark'] .tk-contact__bottom {color:#ECD2DC;}
+:root[data-theme='dark'] .tk-contact__unavailable {color:#F7CEDF;}
+:root[data-theme='dark'] .tk-contact__spark {color:#E9B7CB;}
+:root[data-theme='dark'] .tk-footer {background:#211923;}
+:root[data-theme='dark'] .tk-footer__grid p,
+:root[data-theme='dark'] .tk-footer__nav a,
+:root[data-theme='dark'] .tk-footer__link,
+:root[data-theme='dark'] .tk-footer__bottom {color:var(--tk-muted);}
+:root[data-theme='dark'] .tk-footer__accent {color:#E0ABC0;}
+@media (prefers-reduced-motion:reduce) {
+  .tk-theme-toggle {transition:none;}
+  .tk-theme-toggle:hover {transform:none;}
+}
