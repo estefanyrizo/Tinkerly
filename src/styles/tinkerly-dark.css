@@ -72,7 +72,7 @@
 :root[data-theme='dark'] .tk-process__head>p:last-child,
 :root[data-theme='dark'] .tk-process__step p {color:var(--tk-muted);}
 :root[data-theme='dark'] .tk-process__number {color:#E0AEC3;}
-:root[data-theme='dark'] .tk-process__step:not(:last-child)::after {color:#B8829B;}
+:root[data-theme='dark'] .tk-process__connector {color:#B8829B;}
 :root[data-theme='dark'] .tk-process__symbol {background:#402D3D;color:#EABBD0;}
 :root[data-theme='dark'] .tk-process__step:hover .tk-process__symbol {background:#55364B;}
 :root[data-theme='dark'] .tk-about {background:#231B25;}

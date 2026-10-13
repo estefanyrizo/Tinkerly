@@ -113,7 +113,8 @@ img {display:block; max-width:100%;}
 .tk-process__head>p:last-child {font-size:.88rem;line-height:1.8;color:var(--tk-muted);}
 .tk-process__grid {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.7rem;margin-top:3.8rem;}
 .tk-process__step {position:relative;text-align:center;padding:0 .2rem;}
-.tk-process__step:not(:last-child)::after {content:'';position:absolute;right:-1.1rem;top:2.7rem;width:.55rem;height:.55rem;border-top:1.5px solid #D6B2C0;border-right:1.5px solid #D6B2C0;transform:rotate(45deg);}
+.tk-process__connector {position:absolute;right:-1.3rem;top:2.35rem;color:#D6B2C0;display:grid;place-items:center;pointer-events:none;}
+.tk-process__connector .tk-arrow-icon{width:18px;height:18px;}
 .tk-process__number {position:absolute;top:0;left:calc(50% + 34px);font-size:.65rem;font-weight:600;color:#C58FA4;}
 .tk-process__symbol {display:grid;place-items:center;margin:0 auto 1.2rem;width:79px;height:79px;border-radius:50%;background:#FFF0F4;color:#9B546E;font-size:2rem;transition:transform .4s ease,background .4s ease;}
 .tk-process__step:hover .tk-process__symbol {transform:translateY(-6px) rotate(-5deg);background:#FBE2EB;}
@@ -189,7 +190,7 @@ img {display:block; max-width:100%;}
  .tk-hero__showcase{width:min(100%,620px);margin:auto;}.tk-hero__photo{max-height:470px;aspect-ratio:1.3/1;}
  .tk-bloom-bar__inner{justify-content:center;}.tk-bloom-bar__inner>span:last-child{display:none;}
  .tk-ideas__grid{gap:1rem;}.tk-idea h3{font-size:.9rem;}.tk-idea p{font-size:.71rem;}
- .tk-process__grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:2.5rem 1.5rem;}.tk-process__step::after{display:none;}
+ .tk-process__grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:2.5rem 1.5rem;}.tk-process__connector{display:none;}
  .tk-about__grid{gap:2.6rem;}.tk-footer__grid{gap:2rem;}
 }
 @media(max-width:620px){
@@ -312,3 +313,8 @@ img {display:block; max-width:100%;}
 .tk-arrow-icon {display:inline-block;flex-shrink:0;width:1.15em;height:1.15em;vertical-align:-.16em;stroke:currentColor;}
 .tk-footer__link .tk-arrow-icon {margin-left:.3em;}
 .tk-idea__arrow .tk-arrow-icon {width:1rem;height:1rem;}
+
+/* Decorative brand symbols use SVG paths, never platform-dependent Unicode glyphs. */
+.tk-kicker__star{display:inline-flex;align-items:center;justify-content:center;}
+.tk-kicker__star .tk-brand-icon{width:16px;height:16px;}
+.tk-process__symbol .tk-brand-icon{width:32px;height:32px;}

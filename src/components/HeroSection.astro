@@ -3,11 +3,12 @@ import { getWhatsAppUrl } from '../config/tinkerly.config';
 const wa = getWhatsAppUrl();
 const contact = wa ?? '#como-pedir';
 import ArrowIcon from './ArrowIcon.astro';
+import BrandIcon from './BrandIcon.astro';
 ---
   <section id="inicio" class="tk-hero">
     <div class="tk-container tk-hero__inner">
       <div class="tk-hero__content" data-tk-hero-copy>
-        <div class="tk-kicker tk-hero__intro"><span class="tk-kicker__star" aria-hidden="true">✦</span> PAPELERÍA CREATIVA</div>
+        <div class="tk-kicker tk-hero__intro"><span class="tk-kicker__star" aria-hidden="true"><BrandIcon name="sparkle" /></span> PAPELERÍA CREATIVA</div>
         <h1 class="tk-hero__title">Pequeños detalles,<br/><em>grandes emociones.</em></h1>
         <p class="tk-hero__desc">Stickers, tarjetas y otros detalles de papelería que puedes personalizar para regalar, celebrar o usar cada día.</p>
         <div class="tk-hero__buttons">
