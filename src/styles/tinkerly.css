@@ -258,7 +258,9 @@ img {display:block; max-width:100%;}
 
 /* ---------- Tinkerly: editorial motion and subtle sparkle details ---------- */
 .tk-bloom-bar__inner {justify-content:center;column-gap:clamp(.65rem,2.6vw,2.7rem);row-gap:.65rem;}
-.tk-bloom-sparkle {flex:0 0 20px;color:#BC8599;}
+.tk-bloom-sparkle {width:28px;height:28px;flex:0 0 28px;display:block;}
+.tk-bloom-sparkle__bg {fill:#690A2D;}
+.tk-bloom-sparkle__star {fill:#FFE8F0;}
 .tk-contact__banner {isolation:isolate;}
 .tk-contact__sparkle {position:absolute;z-index:0;width:38px;height:38px;color:#AD6886;pointer-events:none;opacity:.65;}
 .tk-contact__sparkle--left {top:16%;left:7%;}
@@ -302,4 +304,8 @@ img {display:block; max-width:100%;}
 }
 @media (prefers-reduced-motion:reduce){
   .tk-contact__banner .tk-button::after {display:none;}
+}
+
+@media(max-width:620px) {
+  .tk-bloom-sparkle {width:24px;height:24px;flex-basis:24px;}
 }
