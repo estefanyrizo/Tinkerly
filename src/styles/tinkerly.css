@@ -324,10 +324,10 @@ img {display:block; max-width:100%;}
 .tk-footer__grid .tk-footer__location{margin-top:.7rem;color:var(--tk-berry);font-size:.79rem;font-weight:600;}
 :root[data-theme="dark"] .tk-hero__location,:root[data-theme="dark"] .tk-footer__grid .tk-footer__location{color:#E3ACBF;}
 
-/* Social identity in footer: consistent Instagram SVG in both themes. */
-.tk-footer__instagram {
+/* Shared footer treatment for WhatsApp and Instagram in light/dark modes. */
+.tk-footer__social {
   display:inline-flex;align-items:center;gap:.5rem;
   width:fit-content;line-height:1.5;
 }
-.tk-footer__instagram > svg:first-child {width:20px;height:20px;flex:none;}
-.tk-footer__instagram > .tk-arrow-icon {margin-left:.1rem;}
+.tk-footer__social > svg:first-child {width:20px;height:20px;flex:none;}
+.tk-footer__social > .tk-arrow-icon {margin-left:.1rem;}
